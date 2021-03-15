@@ -29,7 +29,12 @@ venta.addEventListener('click', (e) => {
                 body: datos
             }).then(Response => Response.json())
             .then(data => {
-
+                let precio = data * unidades.value;
+                let precioFinal = parseFloat(Math.round(precio * 100) / 100).toFixed(2);
+                aceptarVenta.classList.remove('invisible');
+                costo.style.display = 'block';
+                costo.classList.remove('invisible');
+                costoForm.textContent = `El Total de la venta es de: ${precioFinal}`;
             })
     }
 
