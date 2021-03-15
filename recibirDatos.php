@@ -31,8 +31,31 @@ function validarUsuario(){
         }
 }
 
+function validarVenta(){
+    include('config/conection.php');
+    
+
+    
+        $clave = $_POST['clave'];
+        $unidades = $_POST['unidades'];
+        
+        $query = "SELECT * FROM productos WHERE Id = '$clave'";
+        $result = mysqli_query($conn,$query);
+        while($row=mysqli_fetch_array($result)){
+           $Precio = $row['Precio'];
+           
+        }
+        echo json_encode($Precio);
+    
+       
+}
+
 if(isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['password']) && !empty($_POST['password'])){
     validarUsuario();
+}
+
+if(isset($_POST['clave']) && !empty($_POST['clave']) && isset($_POST['unidades']) && !empty($_POST['unidades'])){
+    validarVenta();
 }
 
 

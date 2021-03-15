@@ -13,7 +13,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item px-5">
-                        <a class="nav-link active text-center text-light h5" aria-current="page" href="#">
+                        <a class="nav-link active text-center text-light h5" aria-current="page" href="ventas.php">
                             <img src="Imagenes/shop.ico">Ventas</a>
                     </li>
 
