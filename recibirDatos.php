@@ -34,8 +34,6 @@ function validarUsuario(){
 function validarVenta(){
     include('config/conection.php');
     
-
-    
         $clave = $_POST['clave'];
         $unidades = $_POST['unidades'];
         
@@ -43,12 +41,28 @@ function validarVenta(){
         $result = mysqli_query($conn,$query);
         while($row=mysqli_fetch_array($result)){
            $Precio = $row['Precio'];
-           
+           $stock = $row['Stock'];
+
         }
-        echo json_encode($Precio);
-    
-       
+        if(!isset($stock) || $stock == 0){
+            $msg = 'No hay stock de este articulo';
+            echo json_encode($msg);
+        }else{
+            if( $stock < $unidades){
+                $msg2 = 'No hay producto suficiente solo existen ' .$stock. ' en stock';
+                echo json_encode($msg2); 
+            }else{
+                echo json_encode($Precio);
+            }
+            
+        }      
 }
+
+
+
+
+
+
 
 if(isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['password']) && !empty($_POST['password'])){
     validarUsuario();
@@ -57,6 +71,9 @@ if(isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['passwo
 if(isset($_POST['clave']) && !empty($_POST['clave']) && isset($_POST['unidades']) && !empty($_POST['unidades'])){
     validarVenta();
 }
+
+
+
 
 
 

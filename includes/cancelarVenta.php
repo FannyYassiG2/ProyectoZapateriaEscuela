@@ -22,7 +22,7 @@ require ('../config/conection.php');
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ballet&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../imagenes/Icono.png">
-    <title>Crear Venta | Declean Glamoure</title>
+    <title>Cancelar Venta | Declean Glamoure</title>
 </head>
 <body>
 <h1 class="text-center m-3">Declean Glamoure</h1>
@@ -31,41 +31,32 @@ require ('../config/conection.php');
     <button type="button" class="btn btn-dark m-2"><a href="../ventas.php" class="badge badge-dark">Regresar</a></button>
     <div class="container-fluid mt-2 w-75">
     
-        <h2 class='text-center'>Crear Venta</h2>
+        <h2 class='text-center'>Cancelar Venta</h2>
     </div>
 
     <!-- Formulario para venta -->
     <div class="container-fluid mt-5 w-25">
              
-        <form method="POST" id="formVenta" >
+        <form method="POST" id="formCancelar" action="cancelar.php" >
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Clave de producto</label>
-                <input type="number" name="clave" id="clave" class="form-control" min="0" pattern="^[0-9]+" required class="form-control" placeholder="Clave">
-                 
-               
+                <label for="exampleInputEmail1" class="form-label">Codigo de venta</label>
+                <input type="number" name="codigo" id="codigo" class="form-control" min="0" pattern="^[0-9]+" required class="form-control" placeholder="Codigo"> 
             </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Unidades</label>
-                <input type="number" name="unidades" id="unidades" class="form-control" min="0" pattern="^[0-9]+" required class="form-control" placeholder="Unidades">
-            </div>
-            <div class="mt-2 invisible" id="respuesta">
+
+            
+            
+             <div class="mt-2 invisible" id="respuesta">
                 <div id="alertaForm" class="alert alert-danger text-center" role="alert">
                     
                 </div>
             </div>
-            <div class="mt-2 invisible" id="costo">
-                <div id="costoForm" class="alert alert-info text-center" role="alert">
-                    
-                </div>
-            </div>
+            
             <div class="d-flex justify-content-center">
-                <button  type="submit" id="venta" name="venta" class="btn btn-primary">Generar Costo</button>
+                <button  type="submit" id="consultar" name="consultar" class="btn btn-primary">Consultar factura</button>
             </div>
             
         </form>
-            <div class="d-flex justify-content-center mt-3">
-                <button  type="submit" id="aceptarVenta" name="aceptarVenta" class="btn btn-primary invisible">Aceptar</button>
-            </div>
+            
     </div>
     
 
@@ -76,7 +67,7 @@ require ('../config/conection.php');
 
          
          <script src="../js/bootstrap.bundle.js"></script>
-         <script src="../js/script-venta.js"></script>
+         <script src="../js/script-cancelar.js"></script>
          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 </html>
