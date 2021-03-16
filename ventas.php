@@ -15,9 +15,9 @@ require_once ('includes/head.php');
             <li class="nav-item">
                   <div class="" >
                             <li><a class="dropdown-item text-center text-light h5 p-2" href="includes/crearVenta.php">Crear Venta</a></li>
-                            <li><a class="dropdown-item text-center text-light h5 p-2" href="includes/agotados.php">Finalizar Venta</a></li>
+                            <li><a class="dropdown-item text-center text-light h5 p-2" href="#">Finalizar Venta</a></li>
                             <li><a class="dropdown-item text-center text-light h5 p-2" href="includes/cancelarVenta.php">Cancelar Venta</a></li>
-                            <li><a class="dropdown-item text-center text-light h5 p-2" href="includes/eliminar.php">Imprimir Venta</a></li>
+                            <li><a class="dropdown-item text-center text-light h5 p-2" href="includes/consultarFactura.php">Imprimir Venta</a></li>
                             
                   </div>
             </li>

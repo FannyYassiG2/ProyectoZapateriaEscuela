@@ -34,7 +34,7 @@ require ('../config/conection.php');
         <h2 class='text-center'>Cancelar Venta</h2>
     </div>
 
-    <!-- Formulario para venta -->
+    <!-- Formulario para factura -->
     <div  class="container-fluid mt-5 w-50">
     
     
@@ -79,7 +79,7 @@ require ('../config/conection.php');
         
         
             <div class="d-flex justify-content-center mt-3">
-                <button  type="button" id="cancelarVenta" name="aceptarVenta" class="btn btn-primary">Cancelar venta</button>
+                <button  type="button" id="cancelarVenta" name="cancelarVenta" class="btn btn-primary">Cancelar venta</button>
             </div>
     </div>
     

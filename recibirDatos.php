@@ -58,6 +58,26 @@ function validarVenta(){
         }      
 }
 
+function validarFactura(){
+    include('config/conection.php');
+    
+        $codigo = $_POST['codigo'];
+        
+        
+        $query = "SELECT * FROM factura WHERE Id_factura = '$codigo'";
+        $result = mysqli_query($conn,$query);
+        if(mysqli_num_rows($result)>0){
+            while($row=mysqli_fetch_array($result)){
+                $factura = $row['Id_factura'];
+             } 
+             
+             echo json_encode($factura);
+         
+            }else{
+            $msg = 'No hay factura con este codigo';
+            echo json_encode($msg);
+}
+}
 
 
 
@@ -70,6 +90,10 @@ if(isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['passwo
 
 if(isset($_POST['clave']) && !empty($_POST['clave']) && isset($_POST['unidades']) && !empty($_POST['unidades'])){
     validarVenta();
+}
+
+if(isset($_POST['codigo']) && !empty($_POST['codigo'])){
+ validarFactura();
 }
 
 

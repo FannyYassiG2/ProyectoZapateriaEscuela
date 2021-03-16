@@ -8,20 +8,16 @@ let tablafactura = document.querySelector('#tablafactura');
 let imprimirFactura = document.querySelector('#imprimir');
 
 
-consultarFactura.addEventListener('click', (e) => {
-    e.preventDefault();
-    cancelarVenta();
-});
 
 imprimirFactura.addEventListener('click', (e) => {
     e.preventDefault();
-
+    imprimir();
 })
 
 
 
 
-function cancelarVenta() {
+function imprimir() {
 
     if (codigo.value === '' || codigo.value <= 0) {
         setTimeout(() => {
@@ -34,7 +30,28 @@ function cancelarVenta() {
             }, 2000);
         }, 100);
     } else {
-        formCancelar.submit();
-
+        let datos = new FormData();
+        datos.append("codigo", codigo.value);
+        fetch('../recibirDatos.php', {
+                method: 'POST',
+                body: datos
+            }).then(Response => Response.json())
+            .then(data => {
+                if (!isNaN(data)) {
+                    console.log(data);
+                    formCancelar.submit();
+                } else {
+                    console.log(data);
+                    setTimeout(() => {
+                        respuestaForm.style.display = 'block';
+                        respuestaForm.classList.remove('invisible');
+                        alertaForm.textContent = `${data}`;
+                        setTimeout(() => {
+                            respuestaForm.style.display = 'none';
+                            respuestaForm.classList.add('invisible');
+                        }, 2000);
+                    }, 100);
+                }
+            })
     }
 };
