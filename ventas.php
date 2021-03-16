@@ -8,7 +8,7 @@ require_once ('includes/head.php');
     <nav class="navbar navbar-expand-lg navbar-light bg-light bg-dark border border-danger img-fluid">
         
     </nav>
-    <button type="button" class="btn btn-dark m-2"><a href="inventario.php" class="badge badge-dark">Regresar</a></button>
+    <button type="button" class="btn btn-dark m-2"><a href="home.php" class="badge badge-dark">Regresar</a></button>
 
 
     <h2 class="text-center m-4"> Ventas </h2>

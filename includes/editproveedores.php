@@ -53,7 +53,7 @@ session_start();
 
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Nombre</span>
-            <input type="text" class="form-control" name="nombre" placeholder="Nombre del proveedor" aria-label="Username" aria-describedby="basic-addon">
+            <input type="text" class="form-control" name="nombre" placeholder="Nombre del proveedor" required aria-label="Username" aria-describedby="basic-addon">
           </div>
 
           <div class="input-group mb-3">
