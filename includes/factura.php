@@ -58,15 +58,8 @@ while($row=mysqli_fetch_array($result)){
     $pdf->Cell(90,10, 'Piezas',1,0,'C',0);
     $pdf->Cell(90,10, $row['unidades'],1,1,'C',0);
     $pdf->Cell(90,10, 'Total',1,0,'C',0);
-    $pdf->Cell(90,10,$row['Precio']*$row['unidades'],1,1,'C',0);
-    // echo'<tr> 
-    //      <td>'.$row['Id_factura'].'</td>
-    //      <td>'.$row['fecha'].'</td>
-    //      <td>'.$row['Id_producto'].'</td>
-    //      <td>'.$row['unidades'].'</td>
-    //      <td> $'.$row['Precio']*$row['unidades'].'</td>
-                                                          
-    //      </tr>';
+    $pdf->Cell(90,10,'$'.$row['Precio']*$row['unidades'],1,1,'C',0);
+    
      }
 
 $pdf->Output();

@@ -10,9 +10,11 @@ inicioSesion.addEventListener('click', (e) => {
     e.preventDefault();
     if (usuario.value === '' || password.value === '') {
         setTimeout(() => {
+            respuestaForm.style.display = 'block';
             respuestaForm.classList.remove('invisible');
             alertaForm.textContent = 'Llena todos los campos';
             setTimeout(() => {
+                respuestaForm.style.display = 'none';
                 respuestaForm.classList.add('invisible');
             }, 2000);
         }, 100);
@@ -33,10 +35,12 @@ inicioSesion.addEventListener('click', (e) => {
                     console.log(data);
                 } else {
                     setTimeout(() => {
+                        respuestaForm.style.display = 'block';
                         respuestaForm.classList.remove('invisible');
                         console.log(data);
                         alertaForm.textContent = 'Datos Incorrectos';
                         setTimeout(() => {
+                            respuestaForm.style.display = 'none';
                             respuestaForm.classList.add('invisible');
                         }, 2000);
                     }, 100);

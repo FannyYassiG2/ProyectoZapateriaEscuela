@@ -60,12 +60,12 @@ require ('../config/conection.php');
 
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Producto</span>
-            <input type="text" class="form-control" name="producto" placeholder="Nombre del producto" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" name="producto" placeholder="Nombre del producto" required aria-label="Username" aria-describedby="basic-addon1">
           </div>
 
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Marca</span>
-            <input type="text" class="form-control" name="marca" placeholder="Marca del producto" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" name="marca" required placeholder="Marca del producto" aria-label="Username" aria-describedby="basic-addon1">
           </div>
 
           <label for="basic-url" class="form-label">Descripción:</label>

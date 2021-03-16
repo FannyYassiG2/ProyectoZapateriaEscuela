@@ -61,17 +61,22 @@ require ('../config/conection.php');
                  
                    $sql="SELECT factura.Id_factura, factura.fecha, factura.Id_producto, factura.unidades, productos.Precio  FROM factura INNER JOIN productos on factura.Id_producto = productos.Id WHERE Id_factura = '$codigo'";
                    $result=mysqli_query($conn,$sql);  
+                   if($result){
                     while($row=mysqli_fetch_array($result)){
                                        
-                    echo'<tr> 
-                         <td>'.$row['Id_factura'].'</td>
-                         <td>'.$row['fecha'].'</td>
-                         <td>'.$row['Id_producto'].'</td>
-                         <td>'.$row['unidades'].'</td>
-                         <td> $'.$row['Precio']*$row['unidades'].'</td>
-                                                                          
-                         </tr>';
-                     }   
+                        echo'<tr> 
+                             <td id="tr">'.$row['Id_factura'].'</td>
+                             <td>'.$row['fecha'].'</td>
+                             <td>'.$row['Id_producto'].'</td>
+                             <td>'.$row['unidades'].'</td>
+                             <td> $'.$row['Precio']*$row['unidades'].'</td>
+                                                                              
+                             </tr>';
+                         }  
+                   }else{
+                       echo '<h1>nooo</h2>';
+                   }
+                     
                                           
                 ?>                           
                 </tbody>
@@ -91,7 +96,7 @@ require ('../config/conection.php');
 
          
          <script src="../js/bootstrap.bundle.js"></script>
-         
+         <script src="../js/script-cancelarVenta.js"></script>
          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 </html>
