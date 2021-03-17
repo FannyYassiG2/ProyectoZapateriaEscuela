@@ -36,10 +36,22 @@ require ('../config/conection.php');
 
     <!-- Formulario para factura -->
     <div  class="container-fluid mt-5 w-50">
-    
-    
 
-    <h2>Contenido de factura</h2>
+    
+    <?php
+
+        $codigo = $_POST['codigo'];
+
+        $consulta = "SELECT * FROM factura WHERE Id_factura = $codigo";
+        $res = mysqli_query($conn,$consulta);
+        while($fila=mysqli_fetch_array($res)){
+            $Id_factura = $fila['Id_factura'];
+        }
+        if(!isset($Id_factura)){
+            echo '<h2 class="mt-5">No existe factura con este codigo</h2>';
+                     
+        }else{
+            echo '<h2>Contenido de factura</h2>
             <table class="table table-striped table-hover">
                  <thead>
                     <tr>
@@ -52,19 +64,22 @@ require ('../config/conection.php');
                                                         
                     </tr>
                 </thead>
-                <tbody>
+                <tbody>';
                                 
-                 <?php
+                 
                  
                      $codigo = $_POST['codigo'];
                      
                  
                    $sql="SELECT factura.Id_factura, factura.fecha, factura.Id_producto, factura.unidades, productos.Precio  FROM factura INNER JOIN productos on factura.Id_producto = productos.Id WHERE Id_factura = '$codigo'";
                    $result=mysqli_query($conn,$sql);  
-                   if($result){
+                   
                     while($row=mysqli_fetch_array($result)){
-                                       
+                        //  variables para mandar a la devolucion
+                        $producto = $row['Id_producto']; 
+                        $unidades =  $row['unidades'];          
                         echo'<tr> 
+                                
                              <td id="tr">'.$row['Id_factura'].'</td>
                              <td>'.$row['fecha'].'</td>
                              <td>'.$row['Id_producto'].'</td>
@@ -73,19 +88,31 @@ require ('../config/conection.php');
                                                                               
                              </tr>';
                          }  
-                   }else{
-                       echo '<h1>nooo</h2>';
-                   }
+                  
                      
                                           
-                ?>                           
-                </tbody>
+                                      
+               echo '</tbody>
             </table>
-        
-        
+
             <div class="d-flex justify-content-center mt-3">
-                <button  type="button" id="cancelarVenta" name="cancelarVenta" class="btn btn-primary">Cancelar venta</button>
-            </div>
+            <form method="POST" action="devolucion.php">
+
+                <input type="hidden" name="vienedelform" id="producto" value= <?php echo "$producto" ?>
+                <input type="hidden" name="vienedelform2" id="unidades" value= <?php echo "$unidades" ?>
+
+                <button  type="submit" id="cancelarVenta" name="cancelarVenta" class="btn btn-primary">Cancelar venta</button>
+            </form>
+                
+            </div>';
+        }
+    ?>
+    
+
+    
+        
+        
+            
     </div>
     
 
@@ -96,7 +123,7 @@ require ('../config/conection.php');
 
          
          <script src="../js/bootstrap.bundle.js"></script>
-         <script src="../js/script-cancelarVenta.js"></script>
+         
          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 </html>

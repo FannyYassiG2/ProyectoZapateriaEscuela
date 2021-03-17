@@ -26,6 +26,11 @@
                         <a class="nav-link text-light h5" href="#">
                             <img src="Imagenes/ingresos.ico"> Ingresos</a>
                     </li>
+
+                    <li class="nav-item px-5">
+                        <a class="nav-link active text-center text-light h5" href="includes/usuarios.php">
+                          <img src="Imagenes/inventario1.ico"> Control de Usuarios</a>
+                  </li>
                 </ul>
             </div>
         </div>
