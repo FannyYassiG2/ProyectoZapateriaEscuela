@@ -51,6 +51,7 @@ require ('../config/conection.php');
                  if(isset($_POST['vienedelform'])){
                         $codigo = $_POST['vienedelform'];
                         $unidades = $_POST['vienedelform2'];
+                        $id_factura = $_POST['vienedelform3'];
                         $query ="SELECT * from productos WHERE Id = '$codigo'";
                         $result=mysqli_query($conn,$query);  
                          while($row=mysqli_fetch_array($result)){
@@ -66,8 +67,11 @@ require ('../config/conection.php');
                                         
                     
 
-                    echo '<h2 class="mt-5">Ahora el producto <strong><em>'.$row['Producto'].'</em></strong> marca <strong><em>'.$row['Marca'].'</em></strong> cuenta con un stock actual de <strong><em>'.$row['Stock'].'</em></strong></h2>';
-                     }                          
+                    echo '<h2 class="mt-5">La factura con codigo '.$id_factura.' quedo fuera del sistema y ahora el producto <strong><em>'.$row['Producto'].'</em></strong> marca <strong><em>'.$row['Marca'].'</em></strong> cuenta con un stock actual de <strong><em>'.$row['Stock'].'</em></strong></h2>';
+                     }   
+                     
+                     $sql2="DELETE FROM factura WHERE Id_factura = '$id_factura'";
+                     $result2=mysqli_query($conn,$sql2);
                 ?>                           
                
         </div>
@@ -90,4 +94,3 @@ require ('../config/conection.php');
 <?php 
     }
     ?>
-

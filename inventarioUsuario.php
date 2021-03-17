@@ -49,6 +49,11 @@
                             <img src="Imagenes/ingresos.ico"> Consultar proveedores</a>
                     </li>
 
+                    <li class="nav-item px-5">
+                        <a class="nav-link active text-center text-light h5" aria-current="page" href="ventasUsuario.php">
+                        <img src="Imagenes/shop.ico"> Ventas</a>
+                    </li>
+
                 </ul>
             </div>
         </div>

@@ -48,7 +48,7 @@ require ('../config/conection.php');
             $Id_factura = $fila['Id_factura'];
         }
         if(!isset($Id_factura)){
-            echo '<h2 class="mt-5">No existe factura con este codigo</h2>';
+            echo '<h2 class="mt-5">La factura con el codgio '.$codigo.' no existe o a sido sacada del sistema con aterioridad</h2>';
                      
         }else{
             echo '<h2>Contenido de factura</h2>
@@ -94,12 +94,12 @@ require ('../config/conection.php');
                                       
                echo '</tbody>
             </table>
-
             <div class="d-flex justify-content-center mt-3">
             <form method="POST" action="devolucion.php">
 
-                <input type="hidden" name="vienedelform" id="producto" value= <?php echo "$producto" ?>
-                <input type="hidden" name="vienedelform2" id="unidades" value= <?php echo "$unidades" ?>
+                <input type="hidden" name="vienedelform" id="producto" value="'.$producto.'">
+                <input type="hidden" name="vienedelform2" id="unidades" value= "'.$unidades.'">
+                <input type="hidden" name="vienedelform3" id="unidades" value= "'.$codigo.'">
 
                 <button  type="submit" id="cancelarVenta" name="cancelarVenta" class="btn btn-primary">Cancelar venta</button>
             </form>
