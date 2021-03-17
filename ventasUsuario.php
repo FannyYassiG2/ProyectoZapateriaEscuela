@@ -38,7 +38,8 @@
                   <div class="" >
                             <li><a class="dropdown-item text-center text-light h5 p-2" href="usuario/crearVentausuario.php">Crear Venta</a></li>
                             
-                            
+                            <li><a class="dropdown-item text-center text-light h5 p-2" href="usuario/verFacturasUsuario.php">Facturas En Sistema</a></li>
+
                             <li><a class="dropdown-item text-center text-light h5 p-2" href="usuario/imprimirFactura.php">Imprimir Venta</a></li>
                             
                   </div>

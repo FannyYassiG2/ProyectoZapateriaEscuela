@@ -19,7 +19,8 @@ require_once ('includes/head.php');
                             <li><a class="dropdown-item text-center text-light h5 p-2" href="includes/crearVenta.php">Crear Venta</a></li>
                             
                             <li><a class="dropdown-item text-center text-light h5 p-2" href="includes/cancelarVenta.php">Cancelar Venta</a></li>
-                            <li><a class="dropdown-item text-center text-light h5 p-2" href="includes/consultarFactura.php">Imprimir Venta</a></li>
+                            <li><a class="dropdown-item text-center text-light h5 p-2" href="includes/verFacturas.php">Facturas En Sistema</a></li>
+                            <li><a class="dropdown-item text-center text-light h5 p-2" href="includes/consultarFactura.php">Imprimir Factura</a></li>
                             
                   </div>
             </li>

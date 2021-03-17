@@ -5,6 +5,8 @@
         $nombre = $_POST['nombre'];
         $password = $_POST['password'];
         $tipoUsuario = $_POST["tipoUsuario"];
+
+        
         
         $sql="INSERT INTO alumnos (Nombre,Contraseña,tipoUsuario) VALUES ('$nombre','$password','$tipoUsuario')";
         $result=mysqli_query($conn,$sql);
