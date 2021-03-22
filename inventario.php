@@ -32,7 +32,7 @@ require_once ('includes/head.php');
 
                   
                   <li class="nav-item px-5">
-                      <a class="nav-link active text-center text-light h5" href="#">
+                      <a class="nav-link active text-center text-light h5" href="includes/tablaingresos.php">
                         <img src="Imagenes/ingresos.ico"> Ingresos</a>
                   </li>
               </ul>

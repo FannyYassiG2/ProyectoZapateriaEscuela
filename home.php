@@ -23,7 +23,7 @@
                     </li>
                         
                     <li class="nav-item px-5">
-                        <a class="nav-link text-light h5" href="#">
+                        <a class="nav-link text-light h5" href="includes/tablaingresos.php">
                             <img src="Imagenes/ingresos.ico"> Ingresos</a>
                     </li>
 
