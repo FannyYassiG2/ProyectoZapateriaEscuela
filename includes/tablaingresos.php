@@ -26,7 +26,7 @@ require ('../config/conection.php');
 <h1 class="text-center m-3">Declean Glamoure</h1>
 <nav class="navbar navbar-expand-lg navbar-light bg-light bg-dark border border-danger img-fluid">
     </nav>
-    <button type="button" class="btn btn-dark m-2"><a href="../inventario.php" class="badge badge-dark">Regresar</a></button>
+    <button type="button" class="btn btn-dark m-2"><a href="../home.php" class="badge badge-dark">Regresar</a></button>
     <div class="container-fluid mt-5 w-75">
     
 

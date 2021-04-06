@@ -29,20 +29,33 @@ require ('../config/conection.php');
 <h1 class="text-center m-3">Declean Glamoure</h1>
          <nav class="navbar navbar-expand-lg navbar-light bg-light bg-dark border border-danger img-fluid">
     </nav>
-    <button type="button" class="btn btn-dark m-2"><a href="../inventario.php" class="badge badge-dark">Regresar</a></button>
+    <button type="button" class="btn btn-dark m-2"><a href="usuarios.php" class="badge badge-dark">Regresar</a></button>
          <h2 class="text-center m-3"> Registrar usuario </h2> 
 
 
-         <form class="container-fluid mt-5 w-50" method="POST" action="Usuario.php">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Clave del usuario:</label>
-                    <input type="text" reuired name="clave" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Escribe la clave del usuario a eliminar...">
-                    
-                </div>
-               
-                
-                <button type="submit" name="eliminar" class="btn btn-primary mt-3">Eliminar</button>
-        </form>
+         <form class="container-fluid mt-5 w-25" method="POST">
+                   
+                   <label for="tipoUsuario">Usuario a eliminar:</label>
+                   <select class="form-select mt-2" reuired name="usuario" id="usuario" aria-label="Default select example">
+                       <option value="2">Selecciona un usuario...</option>
+                       <?php
+                       include_once '../config/conection.php';
+                       $query = "SELECT * FROM alumnos";
+                       $result = mysqli_query($conn,$query);
+                       while ($usuario = mysqli_fetch_array($result)) {
+                           echo '<option value="'.$usuario['Id'].'">'.$usuario['Nombre'].'</option>';
+                       }
+                       ?>
+                   </select>
+                   
+                   <button type="submit" name="eliminar" id="eliminar" class="btn btn-primary mt-3">Eliminar</button>
+                   <!-- Div de alerta en casi de datos incorrectos -->
+                   <div class="mt-2 invisible none" id="answer">
+                       <div id="alertForm" class="alert alert-danger text-center" role="alert">
+
+                       </div>
+                   </div>
+           </form>
 
 
 
@@ -54,6 +67,7 @@ require ('../config/conection.php');
    
          
          <script src="../js/bootstrap.bundle.js"></script>
+         <script src="../js/scriptsEliminarUsuario.js"></script>
          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
          
 </body>
