@@ -31,40 +31,25 @@ require ('../config/conection.php');
     <button type="button" class="btn btn-dark m-2"><a href="../ventas.php" class="badge badge-dark">Regresar</a></button>
     <div class="container-fluid mt-5 w-75">
     
-
-<h2>Facturas en sistema</h2>
-        <table class="table table-striped table-hover">
-             <thead>
-                <tr>
-                    <th scope="col">Codigo</th>
-                    <th scope="col">Fecha</th>
-                    <th scope="col">Clave de producto</th>
-                    <th scope="col">Unidades</th>
-                    <th scope="col">Total</th> 
+    <form class="container-fluid mt-5 w-25" method="POST" action="consultarfecha.php">
                    
-                                                    
-                </tr>
-            </thead>
-            <tbody>
-                            
-             <?php
-               $sql="SELECT * from factura";
-               $result=mysqli_query($conn,$sql);  
-                while($row=mysqli_fetch_array($result)){
-                                    
-                echo'<tr> 
-                        <td id="tr">'.$row['Id_factura'].'</td>
-                        <td>'.$row['fecha'].'</td>
-                        <td>'.$row['Id_producto'].'</td>
-                        <td>'.$row['unidades'].'</td>
-                        <td> $'.$row['total'].'</td>
-                                                                      
-                     </tr>';
-                 }                          
-            ?>                           
-            </tbody>
-        </table>
-    </div>
+                   <label for="tipoUsuario">Selecciona una fecha</label>
+                   <div class="form-group row">
+                        <label for="example-date-input" class="col-2 col-form-label">Date</label>
+                        <div class="col-10">
+                            <input class="form-control" name="fecha" required type="date"  id="fecha">
+                        </div>
+                    </div>
+                   
+                   <button type="submit" name="conslutar" id="consultar" class="btn btn-primary mt-3">Consultar facturas</button>
+                   <!-- Div de alerta en casi de datos incorrectos -->
+                   <div class="mt-2 invisible none" id="answer">
+                       <div id="alertForm" class="alert alert-danger text-center" role="alert">
+
+                       </div>
+                   </div>
+           </form>
+
 
 <footer class="texto bg-dark text-light p-3 mt-5 d-flex justify-content-between">
         <p><a class="nav-link active text-center text-light h5" aria-current="page" href="../config/sesion.php">Salir</a></p>
@@ -73,7 +58,8 @@ require ('../config/conection.php');
 
          
          <script src="../js/bootstrap.bundle.js"></script>
-         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+         
+        
 </body>
 </html>
 
